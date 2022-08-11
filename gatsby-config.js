@@ -1,10 +1,10 @@
 module.exports = {
   pathPrefix: "/landing",
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Grupo CAIO`,
+    description: `Agencia Experta en VTEX`,
+    author: `Grupo CAIO`,
+    siteUrl: `www.grupo-caio.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
