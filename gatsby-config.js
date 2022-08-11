@@ -4,7 +4,7 @@ module.exports = {
     title: `Grupo CAIO`,
     description: `Agencia Experta en VTEX`,
     author: `Grupo CAIO`,
-    siteUrl: `www.grupo-caio.com`,
+    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-image`,
