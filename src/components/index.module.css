@@ -1,54 +1,80 @@
-.list {
-  display: grid;
-  margin: 0;
-  /* https://css-tricks.com/responsive-layouts-fewer-media-queries/ */
-  --w: 280px;
-  --n: 2;
-  gap: var(--size-gap);
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(max(var(--w), 100%/ (var(--n) + 1) + 0.1%), 1fr)
-  );
-  margin-bottom: var(--size-gap);
-  margin-top: var(--size-gap);
+.banner_container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
 }
 
-.listItem {
-  margin: 0;
+.banner_first_container,
+.banner_last_container {
+  width: 50%;
+  background: var(--background-primary);
+  height: 100%;
 }
 
-.listItem::marker {
-  color: #e95800;
+.banner_first_container {
+  padding: var(--padding-home);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.listItem:nth-child(2)::marker {
-  color: #159bf3;
+.banner_last_container {
+  background: var(--background-second);
 }
 
-.listItem:nth-child(3)::marker {
-  color: #8eb814;
+.header_container {
+  padding: var(--padding-header);
+  width: 100%;
 }
 
-.listItem:nth-child(4)::marker {
-  color: #663399;
-}
-
-.listItemLink {
+.banner_title {
+  font-size: var(--font-title);
+  font-weight: 400;
+  max-width: 300px;
   color: var(--color-primary);
-  font-weight: bold;
 }
 
-.listItemDescription {
-  color: var(--color-text);
+.banner_slogan_container {
+  background: var(--background-second);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 160px;
+  width: 300px;
+  padding-left: 140px;
+}
+
+.banner_content_elements {
+  height: 100%;
+  position: relative;
+  padding: 0 14%;
+}
+
+.banner_slogan_title {
+  color: var(--color-primary);
+  font-weight: 400;
+  margin: 0 0 10px 0;
+}
+
+.banner_slogan_description {
+  color: #b3bac2;
+  font-weight: 400;
+  font-size: 13px;
   margin-bottom: 0;
-  margin-top: var(--space-1);
 }
 
-.textCenter {
-  text-align: center;
+.banner_slogan_sub_container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
-.intro {
-  max-width: none;
-  line-height: var(--line-height-loose);
+.banner_big_logo {
+  position: absolute;
+  z-index: 10;
+  height: 40vh;
 }

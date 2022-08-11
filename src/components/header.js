@@ -1,24 +1,19 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { StaticImage } from "gatsby-plugin-image"
+import * as styles from "./index.module.css"
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      margin: `0 auto`,
-      padding: `var(--space-4) var(--size-gutter)`,
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `space-between`,
+      position: `absolute`
     }}
+    className={styles.header_container}
   >
-    <StaticImage
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-      src="../images/logo-v2.png"
+    <img
+      alt="Gatsby logo"
+      height={50}
+      style={{ margin: 0 }}
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAuMjkgODAuNTYiPjxkZWZzPjxzdHlsZT4uY2xzLTF7Zm9udC1zaXplOjQycHg7ZmlsbDojZmZmO2ZvbnQtZmFtaWx5OkNvcmJlbExpZ2h0LCBDb3JiZWw7bGV0dGVyLXNwYWNpbmc6LTAuMDFlbTt9LmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkNhcGFfMiIgZGF0YS1uYW1lPSJDYXBhIDIiPjxnIGlkPSJDYXBhXzEtMiIgZGF0YS1uYW1lPSJDYXBhIDEiPjx0ZXh0IGNsYXNzPSJjbHMtMSI+PHRzcGFuIHg9IjUxLjU3IiB5PSI2Ni43MiI+Q0FJTzwvdHNwYW4+PC90ZXh0PjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTguMTksNDEuNjdjMTEuOTQtLjE2LDI0LjgzLS4yNiwzNi40Mi0uMjgiLz48bGluZSBjbGFzcz0iY2xzLTIiIHgxPSI0NC41IiB5MT0iODAuMTEiIHgyPSIzMS4wNSIgeTI9IjczLjExIi8+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iMzEuNTQiIHkxPSI3My4zNiIgeDI9IjQ0LjUiIHkyPSI0MS42MiIvPjxsaW5lIGNsYXNzPSJjbHMtMiIgeDE9IjguNDciIHkxPSI0MS44NCIgeDI9IjM0LjIiIHkyPSI2Ni44NCIvPjxsaW5lIGNsYXNzPSJjbHMtMiIgeDE9IjE5LjMzIiB5MT0iNDEuNTMiIHgyPSI0NC40NSIgeTI9IjE1Ljg0Ii8+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iMjUuNjEiIHkxPSIzNS4xNCIgeDI9IjE0LjA4IiB5Mj0iMjIuODEiLz48bGluZSBjbGFzcz0iY2xzLTIiIHgxPSI4LjY1IiB5MT0iNDIuMjciIHgyPSI4LjY1IiB5Mj0iMjIuNjEiLz48bGluZSBjbGFzcz0iY2xzLTIiIHgxPSI4LjY1IiB5MT0iMjIuOTciIHgyPSIxNC40NSIgeTI9IjIyLjk3Ii8+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iNy43NCIgeTE9IjIyLjk3IiB4Mj0iOC42NSIgeTI9IjIyLjk3Ii8+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iMC4zNSIgeTE9IjMwLjEiIHgyPSI4LjA5IiB5Mj0iMjIuODMiLz48bGluZSBjbGFzcz0iY2xzLTIiIHkxPSIzMC4yNCIgeDI9IjguNzIiIHkyPSIzMC4yNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTQ0LjMsMTZjMS42MS0yLjksMjAuNzQtNy4xMSwyNi4yLDEiLz48bGluZSBjbGFzcz0iY2xzLTIiIHgxPSI0NC41IiB5MT0iNDEuNjIiIHgyPSI3MC41MiIgeTI9IjE2LjI0Ii8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNjYuNzIsMjBjMy43NywxLDkuMTQsMi42Nyw5LjY4LDcuMDgiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik00My4xOCwyOS45MWMxLDE2LjU0LDguMjksMzMuNC42Nyw1MC4zNyIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTQ0LjQsMTUuODNhNDEuMjIsNDEuMjIsMCwwLDAtMS4yNSw4LjM4Ii8+PGxpbmUgY2xhc3M9ImNscy0yIiB4MT0iNTAuOTQiIHkxPSIzNS4zNCIgeDI9Ijc2Ljg0IiB5Mj0iMjYuNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTQzLjM5LDIzLjc0YTMuMTIsMy4xMiwwLDAsMSwxLjcxLS42NCwzLjY5LDMuNjksMCwwLDEsMy42LDMuNzlBMy43NywzLjc3LDAsMCwxLDQ1LjM0LDMxIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNDUuMzQsMzFhMi42NiwyLjY2LDAsMCwxLTItLjY2Ii8+PC9nPjwvZz48L3N2Zz4="
     />
   </header>
 )
